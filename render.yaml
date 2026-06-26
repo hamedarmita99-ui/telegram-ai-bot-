@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: telegram-ai-channel-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHANNEL_ID
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
